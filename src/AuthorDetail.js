@@ -61,4 +61,13 @@ class AuthorDetail extends Component {
   }
 }
 
-export default AuthorDetail;
+const mapDispatchToProps = dispatch => {
+  return {
+    authors: author => dispatch(fetchAuthors(author))
+  };
+};
+
+export default connect(
+  null,
+  mapDispatchToProps
+)(AuthorDetail);
